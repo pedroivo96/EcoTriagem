@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Telas.MenuActivity">
+
+    <item
+        android:id="@+id/zerar"
+        android:orderInCategory="100"
+        android:title="Resetar base de dados"
+        app:showAsAction="never"/>
+
+</menu>

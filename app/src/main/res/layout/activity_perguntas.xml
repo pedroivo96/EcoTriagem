@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorGreen"
+    android:padding="10dp"
+    android:gravity="center"
+    tools:context="com.example.pedro.ecotriagem.Telas.PerguntasActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pergunta 1"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:id="@+id/tPergunta"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Não"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/custombutton"
+            android:id="@+id/bNao"
+            android:layout_marginRight="25dp"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Sim"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/custombutton"
+            android:id="@+id/bSim"/>
+
+    </LinearLayout>
+
+</LinearLayout>

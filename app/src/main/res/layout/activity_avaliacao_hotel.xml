@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorGreen"
+    android:padding="10dp"
+    tools:context="com.example.pedro.ecotriagem.Telas.AvaliacaoHotelActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nome do Hotel"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/nomeHotel"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cidade,Estado"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/cidadeEstado"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/estrelaamarela15inovatech"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/estrelaamarela15inovatech"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/estrelaamarela15inovatech"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/estrelaamarela15inovatech"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/estrelaamarela15inovatech"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="10 Avaliações"
+        android:textSize="12dp"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Por item"
+        android:textSize="12dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reciclagem"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/reciclagem"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telhado Verde"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/telhadoVerde"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Energia Limpa"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/energiaLimpa"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Economizadores"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/economizadores"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bicicleta"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/bicicleta"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apoio a Cultura"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/apoioCultura"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acessibilidade"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        android:id="@+id/acessibilidade"/>
+    
+</LinearLayout>
