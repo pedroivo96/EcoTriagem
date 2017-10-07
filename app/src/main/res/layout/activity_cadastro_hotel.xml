@@ -9,19 +9,21 @@
     android:padding="10dp"
     tools:context="com.example.pedro.ecotriagem.Telas.CadastroHotelActivity">
 
-    <EditText
-        android:layout_width="match_parent"
+    <AutoCompleteTextView android:id="@+id/nome_hotel"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome"
+        android:hint="Nome hotel"
         android:layout_marginBottom="10dp"
-        android:maxLines="1"/>
+        android:maxLines="1"
+        />
 
-    <EditText
-        android:layout_width="match_parent"
+    <AutoCompleteTextView android:id="@+id/cidade_hotel"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="Cidade"
         android:layout_marginBottom="10dp"
-        android:maxLines="1"/>
+        android:maxLines="1"
+        />
 
     <Spinner
         android:layout_width="wrap_content"

@@ -32,7 +32,13 @@ public class IniciandoAvaliacaoActivity extends AppCompatActivity implements Run
 
     @Override
     public void run() {
-        startActivity(new Intent(this, PerguntasActivity.class));
+        Intent intent = new Intent(this, PerguntasActivity.class);
+        intent.putExtra("nome_hotel", getIntent().getSerializableExtra("nome_hotel"));
+        intent.putExtra("cidade", getIntent().getSerializableExtra("cidade"));
+        intent.putExtra("estado", getIntent().getSerializableExtra("estado"));
+        intent.putExtra("nome_ava", getIntent().getSerializableExtra("nome_ava"));
+        intent.putExtra("cpf", getIntent().getSerializableExtra("cpf"));
+        startActivity(intent);
         finish();
     }
 }

@@ -52,9 +52,16 @@ public class  PerguntasActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if(perguntaNaTela == 6){
-                    //Não há mais perguntas a serem feitas
+                    respostas.add(true);
 
-                    startActivity(new Intent(getContext(), NotaFinalActivity.class));
+                    Intent intent = new Intent(getContext(), NotaFinalActivity.class);
+                    intent.putExtra("nome_hotel", getIntent().getSerializableExtra("nome_hotel"));
+                    intent.putExtra("cidade", getIntent().getSerializableExtra("cidade"));
+                    intent.putExtra("estado", getIntent().getSerializableExtra("estado"));
+                    intent.putExtra("nome_ava", getIntent().getSerializableExtra("nome_ava"));
+                    intent.putExtra("cpf", getIntent().getSerializableExtra("cpf"));
+                    intent.putExtra("respostas", respostas);
+                    startActivity(intent);
                     finish();
                 }
                 else{
@@ -73,9 +80,16 @@ public class  PerguntasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(perguntaNaTela == 6){
-                    //Não há mais perguntas a serem feitas
+                    respostas.add(false);
 
-                    startActivity(new Intent(getContext(), NotaFinalActivity.class));
+                    Intent intent = new Intent(getContext(), NotaFinalActivity.class);
+                    intent.putExtra("nome_hotel", getIntent().getSerializableExtra("nome_hotel"));
+                    intent.putExtra("cidade", getIntent().getSerializableExtra("cidade"));
+                    intent.putExtra("estado", getIntent().getSerializableExtra("estado"));
+                    intent.putExtra("nome_ava", getIntent().getSerializableExtra("nome_ava"));
+                    intent.putExtra("cpf", getIntent().getSerializableExtra("cpf"));
+                    intent.putExtra("respostas", respostas);
+                    startActivity(intent);
                     finish();
                 }
                 else{

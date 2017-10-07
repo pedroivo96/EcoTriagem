@@ -13,7 +13,6 @@ public class AvaliacaoHotel implements Serializable {
     public String nome;
     public String cidade;
     public String estado;
-    public int numEstrela;
     public float nota;
     public int reciclagem;
     public int telhado_verde;
@@ -31,7 +30,6 @@ public class AvaliacaoHotel implements Serializable {
         this.nome = nome;
         this.cidade = cidade;
         this.estado = estado;
-        this.setEstrela(nota);
        // DecimalFormat df = new DecimalFormat("0,0");
         //this.nota = ((int) nota) + Float.parseFloat(df.format(nota));
         this.nota = nota;
@@ -43,18 +41,5 @@ public class AvaliacaoHotel implements Serializable {
         this.apoio_cultura = apoio_cultura;
         this.acessibilidade = acessibilidade;
         this.qAvaliacoes = qAvaliacoes;
-    }
-
-    private void setEstrela(float nota){
-        if(nota >= 0  && nota <= 1)
-            this.numEstrela = 1;
-        if(nota > 1  && nota <= 2)
-            this.numEstrela = 2;
-        if(nota > 2  && nota <= 3)
-            this.numEstrela = 3;
-        if(nota > 3  && nota <= 4)
-            this.numEstrela = 4;
-        if(nota > 4  && nota <= 5)
-            this.numEstrela = 5;
     }
 }

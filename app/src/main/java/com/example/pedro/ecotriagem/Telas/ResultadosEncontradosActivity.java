@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.pedro.ecotriagem.R;
 import com.example.pedro.ecotriagem.control.AvaliacaoHotel;
@@ -18,27 +19,37 @@ public class ResultadosEncontradosActivity extends AppCompatActivity {
 
     private ListView resultadosPesquisa;
     ArrayList<AvaliacaoHotel> avaliacoes;
+    TextView tnenhum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultados_encontrados);
 
-        resultadosPesquisa = (ListView) findViewById(R.id.listResultadosPesquisa);
-        resultadosPesquisa.setAdapter(new ResultadosAdapter(this, avaliacoes)); // Seta o adaptador
+        tnenhum = (TextView) findViewById(R.id.tnenhum) ;
 
-        resultadosPesquisa.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                AvaliacaoHotel av = (AvaliacaoHotel) adapterView.getAdapter().getItem(i);
+        avaliacoes = (ArrayList<AvaliacaoHotel>) getIntent().getSerializableExtra("avaliacoes");
 
-                Intent intent = new Intent(getContext(), AvaliacaoHotelActivity.class);
-                intent.putExtra("avaliacaoHotel", av);
+        if(avaliacoes == null){
+            tnenhum.setText("Nenhum resultado encontrado");
+        }else{
+            resultadosPesquisa = (ListView) findViewById(R.id.listResultadosPesquisa);
+            resultadosPesquisa.setAdapter(new ResultadosAdapter(this, avaliacoes)); // Seta o adaptador
 
-                startActivity(intent);
-                finish();
-            }
-        });
+            resultadosPesquisa.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    AvaliacaoHotel av = (AvaliacaoHotel) adapterView.getAdapter().getItem(i);
+
+                    Intent intent = new Intent(getContext(), AvaliacaoHotelActivity.class);
+                    intent.putExtra("avaliacaoHotel", av);
+
+                    startActivity(intent);
+                }
+            });
+        }
+
+
     }
 
     @Override

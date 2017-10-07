@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:hint="Nome"
         android:layout_marginBottom="30dp"
+        android:id="@+id/edtnome_avaliador"
         android:maxLines="1"/>
 
     <Button

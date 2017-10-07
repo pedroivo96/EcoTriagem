@@ -19,7 +19,7 @@ public class TextoEcoturismoActivity extends AppCompatActivity {
     private TextView texto;
     private Button avancar;
     WebView mWebView;
-    String s = "\tO ecoturismo ou turismo de natureza, segundo a EMBRATUR, é um segmento de atividade turística que utiliza, de forma sustentável, o patrimônio natural e cultural, incentiva sua conservação e busca a formação de uma consciência ambientalista através da interpretação do ambiente, promovendo o bem-estar das populações envolvidas";
+    //String s = "\tO ecoturismo ou turismo de natureza, segundo a EMBRATUR, é um segmento de atividade turística que utiliza, de forma sustentável, o patrimônio natural e cultural, incentiva sua conservação e busca a formação de uma consciência ambientalista através da interpretação do ambiente, promovendo o bem-estar das populações envolvidas";
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -29,11 +29,8 @@ public class TextoEcoturismoActivity extends AppCompatActivity {
 
         mWebView = (WebView) findViewById(R.id.webview);
 
-        String text = "<html><body bgcolor=\"#00A664\" text=\"WHITE\"><br>"
-                + "<p align=\"justify\">"
-                + s
-                + "</p> "
-                + "</body></html>";
+        String text = "<html><body bgcolor=\"#00A664\" text=\"WHITE\"><br><p align=\"justify\">O ecoturismo ou turismo de natureza, segundo a EMBRATUR, é um segmento de atividade turística que utiliza, de forma sustentável, o patrimônio natural e cultural, incentiva sua conservação e busca a formação de uma consciência ambientalista através da interpretação do ambiente, promovendo o bem-estar das populações envolvidas"
+                + "</p></body></html>";
 
         mWebView.loadData(text,"text/html;charset=UTF-8",null);
 

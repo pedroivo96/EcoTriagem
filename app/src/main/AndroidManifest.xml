@@ -26,7 +26,7 @@
         <activity android:name=".Telas.NotaFinalActivity" />
         <activity android:name=".Telas.ResultadosEncontradosActivity" />
         <activity android:name=".Telas.RankingActivity" />
-        <activity android:name=".Telas.AvaliacaoHotelActivity"></activity>
+        <activity android:name=".Telas.AvaliacaoHotelActivity" />
     </application>
 
 </manifest>

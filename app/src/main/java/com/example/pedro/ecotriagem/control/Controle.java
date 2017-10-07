@@ -48,15 +48,29 @@ public class Controle {
 
     public long cadastrarHotel(String nomeHotel, String cidade, String estado){
 
-        this.database = this.avaliacoesDB.getWritableDatabase();
+        long id = -1;
+        String[] campos = {"_id"};
+        this.database = this.avaliacoesDB.getReadableDatabase();
+        Cursor cursor = this.database.query("hoteis", campos, "nome like '%"+nomeHotel+"%' and cidade like '%"+cidade+"%' and estado like '%"+estado+"%'",
+                null, null, null, null);
 
-        ContentValues values = new ContentValues();
-        values.put("nome", nomeHotel);
-        values.put("cidade", cidade);
-        values.put("estado", estado);
+        if(cursor != null && cursor.getCount() > 0){
+            cursor.moveToFirst();
+            id = cursor.getLong(cursor.getColumnIndex("_id"));
+        }else{
+            database.close();
 
-        long id = this.database.insert("hoteis", null, values);
+            this.database = this.avaliacoesDB.getWritableDatabase();
 
+            ContentValues values = new ContentValues();
+            values.put("nome", nomeHotel);
+            values.put("cidade", cidade);
+            values.put("estado", estado);
+
+            id = this.database.insert("hoteis", null, values);
+        }
+
+        cursor.close();
         database.close();
 
         return id;
@@ -221,6 +235,28 @@ public class Controle {
         }
 
         return null;
+    }
+
+    public String[] getNomeHoteis(){
+
+        String[] campos = {"nome"}, nomes = null;
+
+        SQLiteDatabase database = this.avaliacoesDB.getReadableDatabase();
+        Cursor cursor = database.query("hoteis", campos, null, null, null, null, null);
+
+        if(cursor != null && cursor.getCount() > 0) {
+            nomes = new String[cursor.getCount()];
+            cursor.moveToFirst();
+            for (int i = 0; cursor.isAfterLast() == false; i++) {
+                nomes[i] = cursor.getString(cursor.getColumnIndex("nome"));
+                cursor.moveToNext();
+            }
+        }
+
+        cursor.close();
+        database.close();
+
+        return nomes;
     }
 
     private ArrayList<AvaliacaoHotel> ordenarAvaliacoes(ArrayList<AvaliacaoHotel> ahs){

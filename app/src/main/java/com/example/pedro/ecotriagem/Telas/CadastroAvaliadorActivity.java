@@ -17,6 +17,7 @@ public class CadastroAvaliadorActivity extends AppCompatActivity {
 
     Button bAvancar;
     EditText edtcpf;
+    EditText edtnome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class CadastroAvaliadorActivity extends AppCompatActivity {
         edtcpf = (EditText) findViewById(R.id.edtcpf);
         edtcpf.addTextChangedListener(VerificarCPF.insert(VerificarCPF.CPF_MASK, edtcpf));
 
+        edtnome = (EditText) findViewById(R.id.edtnome_avaliador);
+
         bAvancar = (Button) findViewById(R.id.bAvancar);
         bAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +38,10 @@ public class CadastroAvaliadorActivity extends AppCompatActivity {
                // if(! VerificarCPF.isCPF(edtcpf.getText().toString()))
                    // Toast.makeText(getContext(), "CPF inválido", Toast.LENGTH_SHORT).show();
                // else{
-                    startActivity(new Intent(getContext(), CadastroHotelActivity.class));
+                    Intent intent = new Intent(getContext(), CadastroHotelActivity.class);
+                    intent.putExtra("nome_ava", edtnome.getText().toString());
+                    intent.putExtra("nome_ava", edtcpf.getText().toString());
+                    startActivity(intent);
                     finish();
                 //}
             }

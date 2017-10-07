@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.example.pedro.ecotriagem.R;
 import com.example.pedro.ecotriagem.control.AvaliacaoHotel;
+import com.example.pedro.ecotriagem.control.Controle;
 import com.example.pedro.ecotriagem.control.ResultadosAdapter;
 
 import java.util.ArrayList;
@@ -25,8 +26,11 @@ public class RankingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
+        Controle c = new Controle(this);
+        avaliacoes = c.ranking();
+
         ranking = (ListView) findViewById(R.id.listViewRanking);
-        ranking.setAdapter(new ResultadosAdapter(this,avaliacoes));
+        ranking.setAdapter(new ResultadosAdapter(this, avaliacoes));
 
         ranking.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -37,7 +41,6 @@ public class RankingActivity extends AppCompatActivity {
                 intent.putExtra("avaliacaoHotel", av);
 
                 startActivity(intent);
-                finish();
             }
         });
     }
