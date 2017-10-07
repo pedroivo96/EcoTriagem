@@ -26,6 +26,8 @@ public class RankingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
+        setTitle("Ranking 10 mais");
+
         Controle c = new Controle(this);
         avaliacoes = c.ranking();
 

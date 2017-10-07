@@ -5,10 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.pedro.ecotriagem.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,11 +52,16 @@ public class ResultadosAdapter extends BaseAdapter {
 
         TextView tNomeHotel = v.findViewById(R.id.nomeHotel);
         TextView tCidadeEstado = v.findViewById(R.id.cidadeEstado);
+        RatingBar rBar = v.findViewById(R.id.ratingBar);
+        TextView tNotaFinal = v.findViewById(R.id.notaFinal);
 
         tNomeHotel.setText(avaliacoes.get(i).nome);
-        tCidadeEstado.setText(avaliacoes.get(i).cidade + "," +avaliacoes.get(i).estado);
+        tCidadeEstado.setText(avaliacoes.get(i).cidade + ", " +avaliacoes.get(i).estado);
+        rBar.setRating(avaliacoes.get(i).nota);
 
+        DecimalFormat df = new DecimalFormat("0.0");
 
+        tNotaFinal.setText(df.format(avaliacoes.get(i).nota));
 
         return v;
     }

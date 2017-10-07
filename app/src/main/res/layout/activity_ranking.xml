@@ -7,12 +7,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorGreen"
+    android:padding="10dp"
     tools:context="com.example.pedro.ecotriagem.Telas.RankingActivity">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ranking 10 mais"/>
 
     <ListView
         android:layout_width="match_parent"

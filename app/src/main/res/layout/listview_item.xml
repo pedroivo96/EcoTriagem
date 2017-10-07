@@ -1,62 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
-    <RelativeLayout
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nomeHotel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text=""
+            android:maxLength="27"
+            android:textSize="20dp"
+            android:paddingBottom="10dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome Hotel"
-            android:textSize="20dp"
-            android:layout_alignParentStart="true"
-            android:id="@+id/nomeHotel"/>
+            android:layout_height="match_parent"
+            android:text=""
+            android:textSize="15dp"
+            android:id="@+id/cidadeEstado"
+            android:gravity="center_vertical"/>
 
-        <LinearLayout
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_alignParentRight="true">
+
+        <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentEnd="true">
+            android:id="@+id/notaFinal"
+            android:textSize="20dp"
+            android:text="Nota"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"/>
 
-            <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:src="@drawable/estrelaamarela15inovatech"/>
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="4"
+            android:progressTint="#ffef40"
+            android:scaleX="1"
+            android:scaleY="1"
+            style="@android:style/Widget.Holo.Light.RatingBar.Small"
+            android:secondaryProgressTint="#ffef40"
+            />
 
-            <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:src="@drawable/estrelaamarela15inovatech"/>
+    </LinearLayout>
 
-            <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:src="@drawable/estrelaamarela15inovatech"/>
 
-            <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:src="@drawable/estrelaamarela15inovatech"/>
-
-            <ImageView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:src="@drawable/estrelaamarela15inovatech"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Teresina, Piauí"
-        android:textSize="20dp"
-        android:id="@+id/cidadeEstado"/>
-
-</LinearLayout>
+</RelativeLayout>
