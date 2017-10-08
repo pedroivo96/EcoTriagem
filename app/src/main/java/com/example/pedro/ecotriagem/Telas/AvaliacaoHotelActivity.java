@@ -9,6 +9,8 @@ import android.widget.TextView;
 import com.example.pedro.ecotriagem.R;
 import com.example.pedro.ecotriagem.control.AvaliacaoHotel;
 
+import java.text.DecimalFormat;
+
 public class AvaliacaoHotelActivity extends AppCompatActivity {
 
     AvaliacaoHotel avaliacaoHotel;
@@ -50,7 +52,10 @@ public class AvaliacaoHotelActivity extends AppCompatActivity {
 
         tqAvaliacoes.setText(avaliacaoHotel.qAvaliacoes+" avaliações");
         ratingBar.setRating(avaliacaoHotel.nota);
-        tNota.setText(""+avaliacaoHotel.nota);
+
+        DecimalFormat df = new DecimalFormat("0.0");
+
+        tNota.setText(df.format(avaliacaoHotel.nota));
 
     }
 
