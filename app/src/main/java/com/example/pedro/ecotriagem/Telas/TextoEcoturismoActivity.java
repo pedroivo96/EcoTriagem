@@ -29,7 +29,9 @@ public class TextoEcoturismoActivity extends AppCompatActivity {
 
         mWebView = (WebView) findViewById(R.id.webview);
 
-        String text = "<html><body bgcolor=\"#00A664\" text=\"WHITE\"><br><p align=\"justify\">O ecoturismo ou turismo de natureza, segundo a EMBRATUR, é um segmento de atividade turística que utiliza, de forma sustentável, o patrimônio natural e cultural, incentiva sua conservação e busca a formação de uma consciência ambientalista através da interpretação do ambiente, promovendo o bem-estar das populações envolvidas"
+        String text = "<html><body bgcolor=\"#00A664\" text=\"WHITE\"><br><p align=\"justify\">O ecoturismo surgiu a partir de um movimento ambiental mundial no final de 1970, em resposta às preocupações com a degradação do meio ambiente relacionado ao desenvolvimento econômico e às questões sociais provocadas pelo turismo em massa sem a devida conscientização ambiental. Portanto, esse segmento do turismo tem por objetivo atingir os princípios fundamentais do desenvolvimento sustentável, em que a \"exploração\" dos elementos naturais ocorre de forma consciente e ecologicamente correta.\n" +
+                "\n" +
+                "Visando tornar sua experiência o mais fidedigna possível essa vertente turística, o ECOTRIAGEM surge como uma ferramenta de fiscalização das estadias cadastradas na plataforma. A partir dela, você poderá compor um relatório de avaliação das hotelarias com o intuito de auxiliar o FUNGETUR (Fundo Geral do Turismo)- fundo especial de financiamento, vinculado ao Ministério do Turismo, com orçamento específico, dispondo de patrimônio próprio e autonomia financeira e orçamentária, tendo como finalidade o fomento e a provisão de recursos para o financiamento de empreendimentos turísticos considerados de interesse para o desenvolvimento do turismo nacional beneficiando os projetos turísticos que priorizem a prática do desenvolvimento ambiental e sustentável  (conforme o DECRETO NÚMERO 7.381, DE 2 DE DEZEMBRO DE 2010)."
                 + "</p></body></html>";
 
         mWebView.loadData(text,"text/html;charset=UTF-8",null);
