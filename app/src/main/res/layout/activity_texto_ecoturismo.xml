@@ -9,31 +9,30 @@
     android:padding="10dp"
     tools:context="com.example.pedro.ecotriagem.Telas.TextoEcoturismoActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ScrollView
+            android:layout_width="fill_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_weight="1" >
 
             <WebView
                 android:id="@+id/webview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </ScrollView>
 
-            <Button
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="Avançar"
-                android:id="@+id/Avancar"
-                android:layout_marginBottom="15dp"
-                android:textColor="#FFFFFF"
-                android:background="@drawable/custombutton"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Avançar"
+            android:id="@+id/Avancar"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/custombutton"/>
 
-        </LinearLayout>
-
-    </ScrollView>
+    </LinearLayout>
 
 </LinearLayout>

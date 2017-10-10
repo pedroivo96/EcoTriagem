@@ -9,240 +9,263 @@
     android:padding="10dp"
     tools:context="com.example.pedro.ecotriagem.Telas.AvaliacaoHotelActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nome do Hotel"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/nomeHotel"
-        android:textSize="20dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cidade,Estado"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/cidadeEstado"
-        android:textSize="15dp"/>
-
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
 
     <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
-        <RatingBar
-            android:id="@+id/ratingBarHotel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="1"
-            android:rating="0"
-            android:progressTint="#ffef40"
-            android:secondaryProgressTint="#ffef40"
-            android:layout_gravity="center"
-            android:clickable="false"
-            />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="4.5"
+            android:text="Cidade,Estado"
             android:textColor="#FFFFFF"
             android:layout_marginBottom="10dp"
-            android:id="@+id/nota"
+            android:id="@+id/cidadeEstado"
             android:textSize="15dp"/>
 
-    </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
 
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="10 Avaliações"
-        android:textSize="15dp"
-        android:textColor="#FFFFFF"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/qAvaliacoes"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Por item"
-        android:textSize="12dp"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_marginBottom="10dp"/>
-
-    <TableLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:stretchColumns="1"
-        android:layout_marginBottom="10dp">
-
-        <TableRow>
-            <TextView
+            <RatingBar
+                android:id="@+id/ratingBarHotel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Reciclagem"
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/reciclagem"
-                android:layout_gravity="center_horizontal"/>
-        </TableRow>
-
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Telhado Verde"
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/telhadoVerde"
-                android:layout_gravity="center_horizontal"/>
-        </TableRow>
-
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Energia Limpa"
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/energiaLimpa"
-                android:layout_gravity="center_horizontal"/>
-        </TableRow>
-
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Economizadores"
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/economizadores"
-                android:layout_gravity="center_horizontal"/>
-        </TableRow>
-
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bicicleta"
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"
+                android:numStars="5"
+                android:stepSize="1"
+                android:rating="0"
+                android:progressTint="#ffef40"
+                android:secondaryProgressTint="#ffef40"
+                android:layout_gravity="center"
+                android:clickable="false"
+                android:isIndicator="true"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="4.5"
                 android:textColor="#FFFFFF"
-                android:textSize="15dp"
                 android:layout_marginBottom="10dp"
-                android:id="@+id/bicicleta"
-                android:layout_gravity="center_horizontal"/>
-        </TableRow>
-
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Apoio a Cultura"
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/apoioCultura"
-                android:layout_gravity="center_horizontal"/>
-        </TableRow>
-
-
-        <TableRow>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Acessibilidade"
-                android:textColor="#FFFFFF"
+                android:id="@+id/nota"
                 android:textSize="15dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="#FFFFFF"
-                android:textSize="15dp"
-                android:id="@+id/acessibilidade"
-                android:layout_gravity="center_horizontal"/>
-        </TableRow>
+        </LinearLayout>
 
-    </TableLayout>
 
-    <View
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="10 Avaliações"
+            android:textSize="15dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/qAvaliacoes"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Por item:"
+            android:textSize="15dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <TableLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:stretchColumns="1"
+            android:layout_marginBottom="10dp">
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reciclagem"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/reciclagem"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Telhado Verde"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/telhadoVerde"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Energia Limpa"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/energiaLimpa"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Economizadores"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/economizadores"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bicicleta"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/bicicleta"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apoio a Cultura"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/apoioCultura"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Acessibilidade"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="15dp"
+                    android:id="@+id/acessibilidade"
+                    android:layout_gravity="center_horizontal"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+        android:text="Avaliar este hotel"
+        android:id="@+id/Avancar"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/custombutton" />
+
+</LinearLayout>
 
     
 </LinearLayout>

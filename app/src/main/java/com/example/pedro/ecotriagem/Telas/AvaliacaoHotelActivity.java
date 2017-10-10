@@ -15,7 +15,7 @@ public class AvaliacaoHotelActivity extends AppCompatActivity {
 
     AvaliacaoHotel avaliacaoHotel;
     RatingBar ratingBar;
-    TextView tNomeHotel, tCidadeEstado, tReciclagem , tTelhadoVerde , tEnergiaLimpa ,
+    TextView tCidadeEstado, tReciclagem , tTelhadoVerde , tEnergiaLimpa ,
              tEconomizadores , tBicicleta , tApoioCultura , tAcessibilidade, tqAvaliacoes, tNota;
 
     @Override
@@ -24,7 +24,6 @@ public class AvaliacaoHotelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_avaliacao_hotel);
 
         ratingBar = (RatingBar) findViewById(R.id.ratingBarHotel);
-        tNomeHotel = (TextView) findViewById(R.id.nomeHotel);
         tCidadeEstado = (TextView) findViewById(R.id.cidadeEstado);
         tReciclagem = (TextView) findViewById(R.id.reciclagem);
         tTelhadoVerde = (TextView) findViewById(R.id.telhadoVerde);
@@ -39,7 +38,7 @@ public class AvaliacaoHotelActivity extends AppCompatActivity {
         Intent i = getIntent();
         avaliacaoHotel = (AvaliacaoHotel) i.getSerializableExtra("avaliacaoHotel");
 
-        tNomeHotel.setText(avaliacaoHotel.nome);
+        setTitle(avaliacaoHotel.nome);
         tCidadeEstado.setText(avaliacaoHotel.cidade + ", " + avaliacaoHotel.estado);
 
         tReciclagem.append(avaliacaoHotel.reciclagem + " de " + avaliacaoHotel.qAvaliacoes);

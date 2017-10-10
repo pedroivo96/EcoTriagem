@@ -58,24 +58,27 @@ public class PesquisarHoteisActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getContext(), ResultadosEncontradosActivity.class);
+                if(isEmpty(textView)) {
+                    Toast.makeText(getContext(), "Digite uma pesquisa", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(getContext(), ResultadosEncontradosActivity.class);
+                    intent.putExtra("query", textView.getText().toString());
 
-                switch (radioButtonSelecionado){
-                    case 1:
-                        intent.putExtra("avaliacoes", c.pesquisarHoteisPorCidade(textView.getText().toString()));
-                        startActivity(intent);
-                        finish();
-                        break;
-                    case 2:
-                        intent.putExtra("avaliacoes", c.pesquisarHoteisPorNome(textView.getText().toString()));
-                        startActivity(intent);
-                        finish();
-                        break;
-                    default:
-                        Toast.makeText(getContext(), "Escolha uma opção de pesquisa", Toast.LENGTH_SHORT).show();
+                    switch (radioButtonSelecionado){
+                        case 1:
+                            intent.putExtra("avaliacoes", c.pesquisarHoteisPorCidade(textView.getText().toString()));
+                            startActivity(intent);
+                            finish();
+                            break;
+                        case 2:
+                            intent.putExtra("avaliacoes", c.pesquisarHoteisPorNome(textView.getText().toString()));
+                            startActivity(intent);
+                            finish();
+                            break;
+                        default:
+                            Toast.makeText(getContext(), "Escolha uma opção de pesquisa", Toast.LENGTH_SHORT).show();
+                    }
                 }
-
-
             }
         });
 
@@ -102,5 +105,12 @@ public class PesquisarHoteisActivity extends AppCompatActivity {
 
     private Context getContext(){
         return this;
+    }
+
+    private boolean isEmpty(AutoCompleteTextView etText) {
+        String text = etText.getText().toString().trim();
+        if (text.length()<1)
+            return true;
+        return false;
     }
 }

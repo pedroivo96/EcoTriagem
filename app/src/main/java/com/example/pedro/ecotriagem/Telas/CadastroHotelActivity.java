@@ -1,6 +1,8 @@
 package com.example.pedro.ecotriagem.Telas;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -54,14 +56,19 @@ public class CadastroHotelActivity extends AppCompatActivity {
         bAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), IniciandoAvaliacaoActivity.class);
-                intent.putExtra("nome_hotel", textView.getText().toString());
-                intent.putExtra("cidade", textView2.getText().toString());
-                intent.putExtra("estado", estado);
-                intent.putExtra("nome_ava", getIntent().getSerializableExtra("nome_ava"));
-                intent.putExtra("cpf", getIntent().getSerializableExtra("cpf"));
-                startActivity(intent);
-                finish();
+                if(isEmpty(textView) || isEmpty(textView2) || estado.equals("Estado")){
+                    Toast.makeText(getContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(getContext(), IniciandoAvaliacaoActivity.class);
+                    intent.putExtra("nome_hotel", textView.getText().toString());
+                    intent.putExtra("cidade", textView2.getText().toString());
+                    intent.putExtra("estado", estado);
+                    intent.putExtra("nome_ava", getIntent().getSerializableExtra("nome_ava"));
+                    intent.putExtra("cpf", getIntent().getSerializableExtra("cpf"));
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         });
 
@@ -78,12 +85,29 @@ public class CadastroHotelActivity extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        Toast.makeText(this, "Avaliação não concluída", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(this, MenuActivity.class));
-        finish();
+        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
+        alerta.setTitle("Confirmação");
+        alerta.setMessage("Cancelar a avaliação?");
+        alerta.setNegativeButton("Não", null);
+        alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(getContext(), MenuActivity.class));
+                finish();
+            }
+        });
+        AlertDialog dialog = alerta.create();
+        dialog.show();
     }
 
     private Context getContext(){
         return this;
+    }
+
+    private boolean isEmpty(AutoCompleteTextView etText) {
+        String text = etText.getText().toString().trim();
+        if (text.length()<1)
+            return true;
+        return false;
     }
 }

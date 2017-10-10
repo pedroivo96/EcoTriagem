@@ -2,6 +2,7 @@
     <string name="app_name">EcoTriagem</string>
 
     <string-array name="estados">
+        <item>Estado</item>
         <item>Acre</item>
         <item>Alagoas</item>
         <item>Amapá</item>

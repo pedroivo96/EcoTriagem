@@ -1,6 +1,8 @@
 package com.example.pedro.ecotriagem.Telas;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.constraint.solver.ArrayLinkedVariables;
 import android.support.v7.app.AppCompatActivity;
@@ -106,11 +108,19 @@ public class  PerguntasActivity extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        Toast.makeText(this, "Avaliação não concluída", Toast.LENGTH_SHORT).show();
-
-        //Seu código aqui dentro
-        startActivity(new Intent(this, MenuActivity.class));
-        finish();
+        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
+        alerta.setTitle("Confirmação");
+        alerta.setMessage("Cancelar a avaliação?");
+        alerta.setNegativeButton("Não", null);
+        alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(getContext(), MenuActivity.class));
+                finish();
+            }
+        });
+        AlertDialog dialog = alerta.create();
+        dialog.show();
     }
 
     private Context getContext(){

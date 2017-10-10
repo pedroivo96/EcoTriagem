@@ -9,22 +9,6 @@
     android:padding="10dp"
     tools:context="com.example.pedro.ecotriagem.Telas.ResultadosEncontradosActivity">
 
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="Resultados para "
-        android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:gravity="center_horizontal"/>
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:id="@+id/tnenhum"
-        android:gravity="center_horizontal"/>
-
     <ListView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
