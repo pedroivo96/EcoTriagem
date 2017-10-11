@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="O quão sustentável é este hotel ?"
+        android:text="O quão sustentável é este hotel?"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         android:gravity="center_horizontal"

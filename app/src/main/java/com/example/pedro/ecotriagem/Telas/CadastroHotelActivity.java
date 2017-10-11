@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -47,6 +48,9 @@ public class CadastroHotelActivity extends AppCompatActivity {
         final AutoCompleteTextView textView2 = (AutoCompleteTextView) findViewById(R.id.cidade_hotel);
 
         textView2.setAdapter(adapter2);
+
+        textView.requestFocus();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
 
         estados = (Spinner) findViewById(R.id.spinnerEstados);
         ArrayAdapter<CharSequence> adaptador = ArrayAdapter.createFromResource(this, R.array.estados, R.layout.spinner_item);
