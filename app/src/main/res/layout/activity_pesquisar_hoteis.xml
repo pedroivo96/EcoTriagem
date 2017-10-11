@@ -10,18 +10,26 @@
     tools:context="com.example.pedro.ecotriagem.Telas.PesquisarHoteisActivity">
 
     <AutoCompleteTextView android:id="@+id/pesquisa"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Pesquisar"
         android:layout_marginBottom="20dp"
-        android:maxLines="1" />
+        android:maxLines="1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginBottom="30dp">
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="0dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Filtros:"
+            android:layout_marginLeft="7dp"
+            android:layout_marginBottom="6dp"/>
 
         <RadioGroup
             android:layout_width="match_parent"
@@ -38,7 +46,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cidades"
+                android:text="Cidade"
                 android:id="@+id/radioButtonCidades"/>
 
         </RadioGroup>

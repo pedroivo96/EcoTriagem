@@ -34,7 +34,6 @@ public class NotaFinalActivity extends AppCompatActivity {
     public void addListenerOnRatingBar() {
         ratingBar = (RatingBar) findViewById(R.id.ratingBar);
 
-
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             public void onRatingChanged(RatingBar ratingBar, float avaliacao, boolean fromUser) {
                 int nota = (int) Float.parseFloat(String.valueOf(ratingBar.getRating()));
@@ -61,17 +60,6 @@ public class NotaFinalActivity extends AppCompatActivity {
 
                 startActivity(new Intent(getContext(), RankingActivity.class));
                 finish();
-
-                /*Intent intent = new Intent(getContext(), NotaFinalActivity.class);
-                intent.putExtra("nome_hotel", getIntent().getSerializableExtra("nome_hotel"));
-                intent.putExtra("cidade", getIntent().getSerializableExtra("cidade"));
-                intent.putExtra("estado", getIntent().getSerializableExtra("estado"));
-                intent.putExtra("nome_ava", getIntent().getSerializableExtra("nome_ava"));
-                intent.putExtra("cpf", getIntent().getSerializableExtra("cpf"));
-                intent.putExtra("respostas", getIntent().getSerializableExtra("respostas"));
-                intent.putExtra("nota", nota);
-                startActivity(intent);
-                finish();*/
             }
         });
     }

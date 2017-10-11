@@ -62,7 +62,7 @@ public class MenuActivity extends AppCompatActivity {
 
             AlertDialog.Builder alerta = new AlertDialog.Builder(MenuActivity.this);
             alerta.setTitle("Confirmação");
-            alerta.setMessage("Você tem certeza ?");
+            alerta.setMessage("Você tem certeza que deseja apagar todos os dados cadastrados?");
             alerta.setNegativeButton("Não", null);
             alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                 @Override

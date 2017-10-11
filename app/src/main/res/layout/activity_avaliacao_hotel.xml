@@ -12,13 +12,13 @@
 
 
     <LinearLayout
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:layout_marginBottom="20dp">
 
@@ -30,9 +30,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cidade,Estado"
+            android:text="Cidade, Estado"
             android:textColor="#FFFFFF"
             android:layout_marginBottom="10dp"
+            android:gravity="center"
             android:id="@+id/cidadeEstado"
             android:textSize="15dp"/>
 
@@ -59,12 +60,14 @@
                 android:layout_gravity="center"
                 android:clickable="false"
                 android:isIndicator="true"
+                android:scaleX="0.7"
+                android:scaleY="0.7"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4.5"
+                android:text="0,0"
                 android:textColor="#FFFFFF"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/nota"
@@ -81,16 +84,16 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="10 Avaliações"
+            android:text="0 Avaliações"
             android:textSize="15dp"
             android:textColor="#FFFFFF"
-            android:layout_marginBottom="10dp"
+            android:layout_gravity="right"
             android:id="@+id/qAvaliacoes"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Por item:"
+            android:text="Confirmações por item:"
             android:textSize="15dp"
             android:textColor="#000000"
             android:textStyle="bold"
@@ -119,7 +122,7 @@
                     android:textSize="15dp"
                     android:layout_marginBottom="10dp"
                     android:id="@+id/reciclagem"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="right"/>
             </TableRow>
 
 
@@ -140,7 +143,7 @@
                     android:textSize="15dp"
                     android:layout_marginBottom="10dp"
                     android:id="@+id/telhadoVerde"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="right"/>
             </TableRow>
 
 
@@ -161,7 +164,7 @@
                     android:textSize="15dp"
                     android:layout_marginBottom="10dp"
                     android:id="@+id/energiaLimpa"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="right"/>
             </TableRow>
 
 
@@ -182,7 +185,7 @@
                     android:textSize="15dp"
                     android:layout_marginBottom="10dp"
                     android:id="@+id/economizadores"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="right"/>
             </TableRow>
 
 
@@ -204,7 +207,7 @@
                     android:textSize="15dp"
                     android:layout_marginBottom="10dp"
                     android:id="@+id/bicicleta"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="right"/>
             </TableRow>
 
 
@@ -224,7 +227,7 @@
                     android:textSize="15dp"
                     android:layout_marginBottom="10dp"
                     android:id="@+id/apoioCultura"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="right"/>
             </TableRow>
 
 
@@ -243,7 +246,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="15dp"
                     android:id="@+id/acessibilidade"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="right"/>
             </TableRow>
 
         </TableLayout>
@@ -261,9 +264,10 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="Avaliar este hotel"
-        android:id="@+id/Avancar"
+        android:id="@+id/btavaliar"
         android:textColor="#FFFFFF"
-        android:background="@drawable/custombutton" />
+        android:background="@drawable/custombutton"
+        android:onClick="avaliar"/>
 
 </LinearLayout>
 

@@ -19,7 +19,7 @@
         android:textSize="30dp"/>
 
     <ProgressBar
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@android:style/Widget.Holo.Light.ProgressBar.Large"
         android:max="100"

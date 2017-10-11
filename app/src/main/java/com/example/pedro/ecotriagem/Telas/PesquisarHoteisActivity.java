@@ -6,6 +6,7 @@ import android.support.v4.content.res.TypedArrayUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
@@ -35,6 +36,8 @@ public class PesquisarHoteisActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomes_hoteis == null ? cidades : concatenar(cidades, nomes_hoteis));
         final AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.pesquisa);
         textView.setAdapter(adapter);
+        textView.requestFocus();
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
 
         rButtonCidade = (RadioButton) findViewById(R.id.radioButtonCidades);
         rButtonNome = (RadioButton) findViewById(R.id.radioButtonNome);

@@ -19,6 +19,7 @@ public class ResultadosEncontradosActivity extends AppCompatActivity {
 
     private ListView resultadosPesquisa;
     ArrayList<AvaliacaoHotel> avaliacoes;
+    TextView tNumResultados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +27,19 @@ public class ResultadosEncontradosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resultados_encontrados);
 
         resultadosPesquisa = (ListView) findViewById(R.id.listResultadosPesquisa);
+        tNumResultados = (TextView) findViewById(R.id.tNumResultados);
         setTitle("Resultados para \'"+(String) getIntent().getSerializableExtra("query")+"\'");
 
         avaliacoes = (ArrayList<AvaliacaoHotel>) getIntent().getSerializableExtra("avaliacoes");
 
         if(avaliacoes == null){
-            setTitle("Nenhum resultado encontrado");
+            setTitle("Nenhum resultado para '"+(String) getIntent().getSerializableExtra("query")+"\'");
             resultadosPesquisa.setVisibility(View.GONE);
         }else{
+            if(avaliacoes.size() == 1)
+                tNumResultados.setText("1 resultado encontrado");
+            else
+                tNumResultados.setText(avaliacoes.size()+" resultados encontrados");
             resultadosPesquisa.setAdapter(new ResultadosAdapter(this, avaliacoes)); // Seta o adaptador
             resultadosPesquisa.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -47,14 +53,11 @@ public class ResultadosEncontradosActivity extends AppCompatActivity {
                 }
             });
         }
-
-
     }
 
     @Override
     public void onBackPressed()
     {
-        //Seu código aqui dentro
         startActivity(new Intent(this, PesquisarHoteisActivity.class));
         finish();
     }

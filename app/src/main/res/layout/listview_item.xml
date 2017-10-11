@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="8dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -15,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text=""
+            android:text="Hotel Rio Poty"
             android:maxLength="27"
             android:textSize="20dp"
             android:paddingBottom="10dp"
@@ -24,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text=""
+            android:text="Teresina, Piauí"
             android:textSize="15dp"
             android:id="@+id/cidadeEstado"
             android:gravity="center_vertical"/>
@@ -45,8 +46,7 @@
             android:layout_width="wrap_content"
             android:id="@+id/notaFinal"
             android:textSize="20dp"
-            android:text="Nota"
-            android:layout_marginRight="10dp"
+            android:text="0,0"
             android:layout_gravity="center"
             android:gravity="center"/>
 

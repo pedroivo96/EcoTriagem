@@ -23,6 +23,7 @@ public class CadastroHotelActivity extends AppCompatActivity {
     Button bAvancar;
     Controle c;
     String estado;
+    boolean pularCadastroHotel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +64,7 @@ public class CadastroHotelActivity extends AppCompatActivity {
                     intent.putExtra("nome_hotel", textView.getText().toString());
                     intent.putExtra("cidade", textView2.getText().toString());
                     intent.putExtra("estado", estado);
-                    intent.putExtra("nome_ava", getIntent().getSerializableExtra("nome_ava"));
-                    intent.putExtra("cpf", getIntent().getSerializableExtra("cpf"));
+                    intent.putExtras(getIntent().getExtras());
                     startActivity(intent);
                     finish();
                 }

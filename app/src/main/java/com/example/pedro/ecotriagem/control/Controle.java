@@ -85,6 +85,8 @@ public class Controle {
         String[] querys = tratarQuery(nome);
         String pesq = "";
         for(int i = 0; i < querys.length; i++){
+            if(i == 0 && querys[i].equalsIgnoreCase("hotel"))
+                continue;
             if(i == querys.length - 1)
                 pesq += "nome like '%"+querys[i]+"%'";
             else

@@ -32,19 +32,17 @@ public class  PerguntasActivity extends AppCompatActivity {
 
         perguntaNaTela = 0;
 
-        perguntas.add("O hotel faz reciclagem de resíduos ?");
-        perguntas.add("O empreendimento possui telhado verde em suas dependências ?");
-        perguntas.add("Possui fonte de energia limpa ?");
-        perguntas.add("Possui equipamentos economizadores de água e energia ?");
-        perguntas.add("Disponibiliza biciletas para os hóspedes ?");
-        perguntas.add("Possui ações que apoiam o desenvolvimento da cultura local ?");
-        perguntas.add("A estrutura é adequada para receber hóspedes com deficiência ?");
+        perguntas.add("O hotel faz reciclagem de resíduos?");
+        perguntas.add("O empreendimento possui telhado verde em suas dependências?");
+        perguntas.add("Possui fonte de energia limpa?");
+        perguntas.add("Possui equipamentos economizadores de água e energia?");
+        perguntas.add("Disponibiliza biciletas para os hóspedes?");
+        perguntas.add("Possui ações que apoiam o desenvolvimento da cultura local?");
+        perguntas.add("A estrutura é adequada para receber hóspedes com deficiência?");
 
-        //tNumPergunta = (TextView) findViewById(R.id.tNumPergunta);
         tPergunta = (TextView) findViewById(R.id.tPergunta);
 
         tPergunta.setText(perguntas.get(perguntaNaTela));
-        //tNumPergunta.setText("Pergunta "+(perguntaNaTela+1));
 
         setTitle("Pergunta "+(perguntaNaTela+1)+" de 7");
 
@@ -57,11 +55,7 @@ public class  PerguntasActivity extends AppCompatActivity {
                     respostas.add(true);
 
                     Intent intent = new Intent(getContext(), NotaFinalActivity.class);
-                    intent.putExtra("nome_hotel", getIntent().getSerializableExtra("nome_hotel"));
-                    intent.putExtra("cidade", getIntent().getSerializableExtra("cidade"));
-                    intent.putExtra("estado", getIntent().getSerializableExtra("estado"));
-                    intent.putExtra("nome_ava", getIntent().getSerializableExtra("nome_ava"));
-                    intent.putExtra("cpf", getIntent().getSerializableExtra("cpf"));
+                    intent.putExtras(getIntent().getExtras());
                     intent.putExtra("respostas", respostas);
                     startActivity(intent);
                     finish();
@@ -85,11 +79,7 @@ public class  PerguntasActivity extends AppCompatActivity {
                     respostas.add(false);
 
                     Intent intent = new Intent(getContext(), NotaFinalActivity.class);
-                    intent.putExtra("nome_hotel", getIntent().getSerializableExtra("nome_hotel"));
-                    intent.putExtra("cidade", getIntent().getSerializableExtra("cidade"));
-                    intent.putExtra("estado", getIntent().getSerializableExtra("estado"));
-                    intent.putExtra("nome_ava", getIntent().getSerializableExtra("nome_ava"));
-                    intent.putExtra("cpf", getIntent().getSerializableExtra("cpf"));
+                    intent.putExtras(getIntent().getExtras());
                     intent.putExtra("respostas", respostas);
                     startActivity(intent);
                     finish();

@@ -32,6 +32,8 @@ public class CadastroAvaliadorActivity extends AppCompatActivity {
         edtcpf = (EditText) findViewById(R.id.edtcpf);
         edtcpf.addTextChangedListener(VerificarCPF.insert(VerificarCPF.CPF_MASK, edtcpf));
 
+        edtcpf.requestFocus();
+
         edtnome = (EditText) findViewById(R.id.edtnome_avaliador);
 
         bAvancar = (Button) findViewById(R.id.bAvancar);
@@ -45,11 +47,17 @@ public class CadastroAvaliadorActivity extends AppCompatActivity {
                 // if(! VerificarCPF.isCPF(edtcpf.getText().toString()))
                 // Toast.makeText(getContext(), "CPF inválido", Toast.LENGTH_SHORT).show();
                 // else{
-                Intent intent = new Intent(getContext(), CadastroHotelActivity.class);
-                intent.putExtra("nome_ava", edtnome.getText().toString());
-                intent.putExtra("nome_ava", edtcpf.getText().toString());
-                startActivity(intent);
-                finish();
+                    Intent intent = null;
+                    if(getIntent().getExtras() != null){ //veio de avaliacao hotel
+                        intent = new Intent(getContext(), IniciandoAvaliacaoActivity.class);
+                        intent.putExtras(getIntent().getExtras());
+                    }else{
+                        intent = new Intent(getContext(), CadastroHotelActivity.class);
+                    }
+                    intent.putExtra("nome_ava", edtnome.getText().toString());
+                    intent.putExtra("cpf", edtcpf.getText().toString());
+                    startActivity(intent);
+                    finish();
                 //}
             }
             }
