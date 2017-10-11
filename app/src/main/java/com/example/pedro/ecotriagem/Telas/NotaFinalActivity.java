@@ -58,7 +58,7 @@ public class NotaFinalActivity extends AppCompatActivity {
                     Toast.makeText(getContext(), "Erro no cadastro da avaliação!", Toast.LENGTH_SHORT).show();
                 }
 
-                startActivity(new Intent(getContext(), RankingActivity.class));
+                startActivity(new Intent(getContext(), ObrigadoActivity.class));
                 finish();
             }
         });

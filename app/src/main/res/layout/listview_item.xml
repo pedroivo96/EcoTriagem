@@ -20,6 +20,7 @@
             android:maxLength="27"
             android:textSize="20dp"
             android:paddingBottom="10dp"
+            android:textColor="#ffffff"
             />
 
         <TextView
@@ -28,7 +29,8 @@
             android:text="Teresina, Piauí"
             android:textSize="15dp"
             android:id="@+id/cidadeEstado"
-            android:gravity="center_vertical"/>
+            android:gravity="center_vertical"
+            android:textColor="#ffffff"/>
 
 
     </LinearLayout>
@@ -48,7 +50,8 @@
             android:textSize="20dp"
             android:text="0,0"
             android:layout_gravity="center"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="#ffffff"/>
 
         <RatingBar
             android:id="@+id/ratingBar"

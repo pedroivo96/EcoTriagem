@@ -8,6 +8,7 @@ import android.support.v7.widget.ListViewCompat;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.pedro.ecotriagem.R;
 import com.example.pedro.ecotriagem.control.AvaliacaoHotel;
@@ -26,10 +27,14 @@ public class RankingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking);
 
-        setTitle("Ranking 10 mais");
+        setTitle("Ranking dos 10+");
 
         Controle c = new Controle(this);
         avaliacoes = c.ranking();
+
+        if(avaliacoes == null){
+            Toast.makeText(this, "Nenhum hotel avaliado", Toast.LENGTH_SHORT).show();
+        }
 
         ranking = (ListView) findViewById(R.id.listViewRanking);
         ranking.setAdapter(new ResultadosAdapter(this, avaliacoes));
@@ -41,7 +46,6 @@ public class RankingActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getContext(), AvaliacaoHotelActivity.class);
                 intent.putExtra("avaliacaoHotel", av);
-
                 startActivity(intent);
             }
         });

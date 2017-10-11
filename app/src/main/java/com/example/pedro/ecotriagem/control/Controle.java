@@ -46,6 +46,46 @@ public class Controle {
         return false;
     }
 
+    public boolean verificarAvaliacao(String cpf, String nomeHotel, String cidade, String estado){
+
+        String[] campos = {"cpf"};
+        this.database = this.avaliacoesDB.getReadableDatabase();
+        Cursor cursor = this.database.query("users", campos, "cpf = '" + cpf+"'", null, null, null, null);
+
+        if(cursor != null && cursor.getCount() == 1) {
+            cursor.close();
+            database.close();
+            cursor.close();
+
+            String[] campos2 = {"_id"};
+            this.database = this.avaliacoesDB.getReadableDatabase();
+            cursor = this.database.query("hoteis", campos2, "nome like '%"+nomeHotel+"%' and cidade like '%"+cidade+"%' and estado like '%"+estado+"%'",
+                    null, null, null, null);
+
+            if(cursor != null && cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                long id = cursor.getLong(cursor.getColumnIndex("_id"));
+
+                database.close();
+                cursor.close();
+
+                String[] campos3 = {"id_hotel"};
+                this.database = this.avaliacoesDB.getReadableDatabase();
+                cursor = this.database.query("respostas", campos3, "id_hotel = "+id+" and cpf_user = '"+cpf+"'", null, null, null, null);
+
+                if(cursor != null && cursor.getCount() > 0) {
+                    database.close();
+                    cursor.close();
+                    return true;
+                }
+            }
+        }
+
+        database.close();
+        cursor.close();
+        return false;
+    }
+
     public long cadastrarHotel(String nomeHotel, String cidade, String estado){
 
         long id = -1;

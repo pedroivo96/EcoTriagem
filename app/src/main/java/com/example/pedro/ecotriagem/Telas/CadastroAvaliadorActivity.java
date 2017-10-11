@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -46,9 +47,9 @@ public class CadastroAvaliadorActivity extends AppCompatActivity {
             if(isEmpty(edtcpf) || isEmpty(edtnome)){
                 Toast.makeText(getContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
             }else{
-                // if(! VerificarCPF.isCPF(edtcpf.getText().toString()))
-                // Toast.makeText(getContext(), "CPF inválido", Toast.LENGTH_SHORT).show();
-                // else{
+                if(! VerificarCPF.isCPF(edtcpf.getText().toString()))
+                    Toast.makeText(getContext(), "CPF inválido", Toast.LENGTH_SHORT).show();
+                else{
                     Intent intent = null;
                     if(getIntent().getExtras() != null){ //veio de avaliacao hotel
                         intent = new Intent(getContext(), IniciandoAvaliacaoActivity.class);
@@ -56,11 +57,14 @@ public class CadastroAvaliadorActivity extends AppCompatActivity {
                     }else{
                         intent = new Intent(getContext(), CadastroHotelActivity.class);
                     }
+
+                    ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(edtnome.getWindowToken(), 0);
+
                     intent.putExtra("nome_ava", edtnome.getText().toString());
                     intent.putExtra("cpf", edtcpf.getText().toString());
                     startActivity(intent);
                     finish();
-                //}
+                }
             }
             }
         });

@@ -8,5 +8,10 @@
         android:orderInCategory="100"
         android:title="Resetar base de dados"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/sobre"
+        android:orderInCategory="100"
+        android:title="Sobre"
+        app:showAsAction="never"/>
 
 </menu>

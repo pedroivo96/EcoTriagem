@@ -44,6 +44,11 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
+    public void ranking(View v){
+        startActivity(new Intent(this, RankingActivity.class));
+        finish();
+    }
+
     private Context getContext(){
         return this;
     }
@@ -75,6 +80,11 @@ public class MenuActivity extends AppCompatActivity {
             dialog.show();
 
             return true;
+        }
+
+        if(id == R.id.sobre){
+            Intent intent = new Intent(this, SobreActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

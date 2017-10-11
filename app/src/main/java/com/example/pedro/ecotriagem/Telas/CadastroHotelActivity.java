@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -25,6 +26,7 @@ public class CadastroHotelActivity extends AppCompatActivity {
     Controle c;
     String estado;
     boolean pularCadastroHotel;
+    AutoCompleteTextView textView, textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +41,13 @@ public class CadastroHotelActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, nomes_hoteis == null ? vazio : nomes_hoteis);
 
-        final AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.nome_hotel);
+        textView = (AutoCompleteTextView) findViewById(R.id.nome_hotel);
 
         textView.setAdapter(adapter);
 
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cidades);
 
-        final AutoCompleteTextView textView2 = (AutoCompleteTextView) findViewById(R.id.cidade_hotel);
+        textView2 = (AutoCompleteTextView) findViewById(R.id.cidade_hotel);
 
         textView2.setAdapter(adapter2);
 
@@ -64,6 +66,8 @@ public class CadastroHotelActivity extends AppCompatActivity {
                 if(isEmpty(textView) || isEmpty(textView2) || estado.equals("Estado")){
                     Toast.makeText(getContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 }else{
+                    ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(textView2.getWindowToken(), 0);
+
                     Intent intent = new Intent(getContext(), IniciandoAvaliacaoActivity.class);
                     intent.putExtra("nome_hotel", textView.getText().toString());
                     intent.putExtra("cidade", textView2.getText().toString());

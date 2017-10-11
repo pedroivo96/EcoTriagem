@@ -6,28 +6,48 @@
     android:layout_height="match_parent"
     tools:context="com.example.pedro.ecotriagem.Telas.MenuActivity"
     android:background="@color/colorGreen"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp">
+    android:orientation="vertical">
 
-    <Button
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pesquisar Hotel"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/custombutton"
-        android:id="@+id/buttonPesquisarHotel"
-        android:layout_marginBottom="40dp"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Avaliar Hotel"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/custombutton"
-        android:id="@+id/buttonAvaliarHotel"
-        android:layout_marginBottom="25dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_gravity="center">
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pesquisar Hotel"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/custombutton"
+                android:id="@+id/buttonPesquisarHotel"
+                android:layout_marginBottom="40dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Avaliar Hotel"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/custombutton"
+                android:id="@+id/buttonAvaliarHotel"
+                android:layout_marginBottom="40dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver ranking 10+"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/custombutton"
+                android:onClick="ranking"
+                android:layout_marginBottom="4dp"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

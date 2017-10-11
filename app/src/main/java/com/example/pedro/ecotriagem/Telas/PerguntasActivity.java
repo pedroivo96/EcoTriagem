@@ -36,7 +36,7 @@ public class  PerguntasActivity extends AppCompatActivity {
         perguntas.add("O empreendimento possui telhado verde em suas dependências?");
         perguntas.add("Possui fonte de energia limpa?");
         perguntas.add("Possui equipamentos economizadores de água e energia?");
-        perguntas.add("Disponibiliza biciletas para os hóspedes?");
+        perguntas.add("Disponibiliza bicicletas para os hóspedes?");
         perguntas.add("Possui ações que apoiam o desenvolvimento da cultura local?");
         perguntas.add("A estrutura é adequada para receber hóspedes com deficiência?");
 

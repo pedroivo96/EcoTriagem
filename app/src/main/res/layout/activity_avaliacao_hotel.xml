@@ -40,7 +40,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray"/>
+            android:background="#23000000"/>
 
         <LinearLayout
             android:layout_height="wrap_content"
@@ -79,7 +79,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray"/>
+            android:background="#23000000"/>
 
         <TextView
             android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:text="Confirmações por item:"
             android:textSize="15dp"
-            android:textColor="#616161"
+            android:textColor="#ffffff"
             android:textStyle="bold"
             android:layout_marginBottom="10dp"/>
 
@@ -130,7 +130,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Telhado Verde"
+                    android:text="Telhado verde"
                     android:textColor="#FFFFFF"
                     android:textSize="15dp"
                     android:layout_marginBottom="10dp"/>
@@ -151,7 +151,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Energia Limpa"
+                    android:text="Energia limpa"
                     android:textColor="#FFFFFF"
                     android:textSize="15dp"
                     android:layout_marginBottom="10dp" />
@@ -215,7 +215,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Apoio a Cultura"
+                    android:text="Apoio a cultura"
                     android:textColor="#FFFFFF"
                     android:textSize="15dp"
                     android:layout_marginBottom="10dp"/>
@@ -254,7 +254,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray"/>
+            android:background="#23000000"/>
 
         </LinearLayout>
 
